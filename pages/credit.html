@@ -1,0 +1,81 @@
+<!-- pages/credit.html -->
+<div class="credit-container">
+    <div class="credit-header">
+        <div class="credit-balance">
+            <div class="credit-icon">💎</div>
+            <div class="credit-amount" id="creditBalance">0</div>
+            <div class="credit-label">créditos disponibles</div>
+        </div>
+    </div>
+    
+    <div id="creditUserStatus"></div>
+    
+    <div id="creditContent"></div>
+    
+    <!-- ===== SOCIAL BAR DE ADSTERRA ===== -->
+    <div id="adsterraSocialBar" style="margin-top:16px;border-radius:12px;overflow:hidden;background:#f5f5f5;padding:4px;">
+        <div id="adsterraSocialBarContainer"></div>
+        <script>
+            (function() {
+                const container = document.getElementById('adsterraSocialBarContainer');
+                if (container) {
+                    const script = document.createElement('script');
+                    script.src = 'https://pl31241209.profitableratecpmnetwork.com/49/96/b7/4996b742a5bb42b0b79c71b76c741ab9.js';
+                    script.async = true;
+                    container.appendChild(script);
+                }
+            })();
+        </script>
+    </div>
+    
+    <button class="modal-close-btn" onclick="app.navigateTo('home')" style="margin-top:16px;">← Volver</button>
+</div>
+
+<script>
+    function initCredit() {
+        const statusEl = document.getElementById('creditUserStatus');
+        const user = AuthSystem.getUser();
+        
+        if (user) {
+            statusEl.innerHTML = `
+                <div class="credit-user-card">
+                    <div class="credit-user-info">
+                        <span class="credit-user-name">👤 ${user.name}</span>
+                        <span class="credit-user-phone">📱 ${user.phone}</span>
+                        <span class="credit-user-id">🆔 ${user.id || 'Usuario'}</span>
+                    </div>
+                    <button class="credit-logout-btn" onclick="AuthSystem.logout();app.navigateTo('credit');">Cerrar sesión</button>
+                </div>
+            `;
+        } else {
+            statusEl.innerHTML = `
+                <div class="credit-user-card" style="background:#f8fffb;border:2px solid #00a859;">
+                    <div style="text-align:center;padding:8px 0;">
+                        <div style="font-size:32px;margin-bottom:4px;">👤</div>
+                        <div style="font-weight:600;color:#1a3a2a;">Regístrate</div>
+                        <div style="font-size:12px;color:#5a7a6a;margin:4px 0 8px;">Obtén 5 créditos gratis al registrarte</div>
+                        <button class="modal-btn" onclick="window.registrarConGoogle()" style="background:#4285F4;margin-top:4px;">
+                            🔑 Registrarse
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+        
+        // Cargar el contenido de crédito desde credit.js
+        if (typeof window.initCreditSystem === 'function') {
+            window.initCreditSystem();
+        }
+    }
+    
+    function registrarConGoogle() {
+        const result = AuthSystem.registerWithGoogle();
+        if (result) {
+            app.navigateTo('credit');
+            CreditSystem.updateUI();
+        }
+    }
+    
+    window.initCredit = initCredit;
+    window.registrarConGoogle = registrarConGoogle;
+</script>

@@ -1,0 +1,130 @@
+<!-- pages/myiphone.html -->
+<div class="operations-container" style="padding:12px 16px 12px;">
+    <div style="text-align:center;padding:6px 0 12px;">
+        <img src="assets/images/mimovil-baner.png" alt="My iPhone" style="width:100%;max-width:300px;border-radius:12px;margin-bottom:8px;" onerror="this.style.display='none'">
+        <h2 style="font-family:'Playfair Display',serif;font-size:20px;color:#1a3a2a;">📱 My iPhone</h2>
+        <p style="font-size:12px;color:#5a7a6a;">Códigos Cubacel • Saldo, paquetes, recargas y más</p>
+    </div>
+    
+    <div class="operations-list" style="display:flex;padding:0;gap:6px;">
+        <div class="categoria-titulo" style="font-size:14px;font-weight:600;color:#1a3a2a;margin:10px 0 4px 4px;padding:4px 0;border-bottom:2px solid #e8f5ee;width:100%;">📊 Saldo y Consultas</div>
+        
+        <div class="operation-card" onclick="app.marcarUssd('*222#')" style="margin-bottom:4px;">
+            <div class="operation-info"><div class="operation-name">💰 Consultar Saldo</div><div class="operation-desc">Consultar saldo principal, voz, SMS y datos</div></div>
+            <span class="operation-phone">📞</span>
+        </div>
+        
+        <div class="operation-card" onclick="app.marcarUssd('*222*732#')" style="margin-bottom:4px;">
+            <div class="operation-info"><div class="operation-name">📊 Consultar Recarga Mensual</div><div class="operation-desc">Consultar cuánto puedes recargar en el mes (360 CUP)</div></div>
+            <span class="operation-phone">📞</span>
+        </div>
+        
+        <div class="operation-card" onclick="app.marcarUssd('*111#')" style="margin-bottom:4px;">
+            <div class="operation-info"><div class="operation-name">📱 Saldo Postpago</div><div class="operation-desc">Consultar saldo de cuentas postpago / Línea Corporativa</div></div>
+            <span class="operation-phone">📞</span>
+        </div>
+        
+        <div class="operation-card" onclick="app.marcarUssd('*118#')" style="margin-bottom:4px;">
+            <div class="operation-info"><div class="operation-name">📞 Telefonía Fija</div><div class="operation-desc">Consultar saldo de telefonía fija</div></div>
+            <span class="operation-phone">📞</span>
+        </div>
+        
+        <div class="operation-card" onclick="app.marcarUssd('*222*887#')" style="margin-bottom:4px;">
+            <div class="operation-info"><div class="operation-name">📶 Consultar MB Cubacel</div><div class="operation-desc">Consultar MB consumidos de Cubacel</div></div>
+            <span class="operation-phone">📞</span>
+        </div>
+        
+        <div class="categoria-titulo" style="font-size:14px;font-weight:600;color:#1a3a2a;margin:12px 0 4px 4px;padding:4px 0;border-bottom:2px solid #e8f5ee;width:100%;">📱 Planes y Paquetes</div>
+        
+        <div class="operation-card" onclick="app.marcarUssd('*133#')" style="margin-bottom:4px;">
+            <div class="operation-info"><div class="operation-name">📦 Comprar Servicios</div><div class="operation-desc">Comprar Datos, SMS, Voz o Plan Amigos</div></div>
+            <span class="operation-phone">📞</span>
+        </div>
+        
+        <div class="operation-card" onclick="app.marcarUssd('*222*266#')" style="margin-bottom:4px;">
+            <div class="operation-info"><div class="operation-name">🎁 Consultar Bono</div><div class="operation-desc">Consultar bono de recargas en promoción</div></div>
+            <span class="operation-phone">📞</span>
+        </div>
+        
+        <div class="operation-card" onclick="app.marcarUssd('*222*328#')" style="margin-bottom:4px;">
+            <div class="operation-info"><div class="operation-name">📶 Paquete de Datos</div><div class="operation-desc">Consultar paquete de datos comprado</div></div>
+            <span class="operation-phone">📞</span>
+        </div>
+        
+        <div class="operation-card" onclick="app.marcarUssd('*222*869#')" style="margin-bottom:4px;">
+            <div class="operation-info"><div class="operation-name">🎙️ Plan de Voz</div><div class="operation-desc">Consultar crédito del plan de voz</div></div>
+            <span class="operation-phone">📞</span>
+        </div>
+        
+        <div class="operation-card" onclick="app.marcarUssd('*222*767#')" style="margin-bottom:4px;">
+            <div class="operation-info"><div class="operation-name">✉️ Plan de SMS</div><div class="operation-desc">Consultar crédito del plan de SMS</div></div>
+            <span class="operation-phone">📞</span>
+        </div>
+        
+        <div class="operation-card" onclick="app.marcarUssd('*222*264#')" style="margin-bottom:4px;">
+            <div class="operation-info"><div class="operation-name">👥 Plan Amigos</div><div class="operation-desc">Consultar Plan Amigos</div></div>
+            <span class="operation-phone">📞</span>
+        </div>
+        
+        <div class="operation-card" onclick="app.marcarUssd('*222*468#')" style="margin-bottom:4px;">
+            <div class="operation-info"><div class="operation-name">🌐 Internet Móvil</div><div class="operation-desc">Consultar si puedes conectarte por datos móviles</div></div>
+            <span class="operation-phone">📞</span>
+        </div>
+        
+        <div class="categoria-titulo" style="font-size:14px;font-weight:600;color:#1a3a2a;margin:12px 0 4px 4px;padding:4px 0;border-bottom:2px solid #e8f5ee;width:100%;">🔄 Recargas</div>
+        
+        <div class="operation-card" onclick="myiPhone.rechargeCupon()" style="margin-bottom:4px;">
+            <div class="operation-info"><div class="operation-name">💳 Recargar con cupón</div><div class="operation-desc">Recargar saldo con tarjeta de recarga (*662*código#)</div></div>
+            <span class="operation-phone">🎫</span>
+        </div>
+        
+        <div class="operation-card" onclick="app.marcarUssd('*666')" style="margin-bottom:4px;">
+            <div class="operation-info"><div class="operation-name">📞 Activar Servicio Cubacel</div><div class="operation-desc">Activar servicio Cubacel (seguir instrucciones de voz)</div></div>
+            <span class="operation-phone">📞</span>
+        </div>
+        
+        <div class="operation-card" onclick="app.marcarUssd('*234#')" style="margin-bottom:4px;">
+            <div class="operation-info"><div class="operation-name">🔄 Transferir Saldo</div><div class="operation-desc">Transferir saldo a otro número (*234*1*)</div></div>
+            <span class="operation-phone">📞</span>
+        </div>
+        
+        <div class="categoria-titulo" style="font-size:14px;font-weight:600;color:#1a3a2a;margin:12px 0 4px 4px;padding:4px 0;border-bottom:2px solid #e8f5ee;width:100%;">⚙️ Configuración</div>
+        
+        <div class="operation-card" onclick="app.marcarUssd('*111*6#')" style="margin-bottom:4px;">
+            <div class="operation-info"><div class="operation-name">📱 Tarifa Diferenciada</div><div class="operation-desc">Consultar si tienes tarifa diferenciada</div></div>
+            <span class="operation-phone">📞</span>
+        </div>
+        
+        <div class="operation-card" onclick="app.marcarUssd('#06#')" style="margin-bottom:4px;">
+            <div class="operation-info"><div class="operation-name">🔢 Código IMEI</div><div class="operation-desc">Conocer el código IMEI de tu teléfono</div></div>
+            <span class="operation-phone">📞</span>
+        </div>
+        
+        <div class="operation-card" onclick="app.marcarUssd('#330*0000#')" style="margin-bottom:4px;">
+            <div class="operation-info"><div class="operation-name">🚫 Cancelar Bloqueos</div><div class="operation-desc">Cancelar todos los bloqueos de llamada</div></div>
+            <span class="operation-phone">📞</span>
+        </div>
+        
+        <div class="categoria-titulo" style="font-size:14px;font-weight:600;color:#1a3a2a;margin:12px 0 4px 4px;padding:4px 0;border-bottom:2px solid #e8f5ee;width:100%;">📞 Llamadas y Servicios</div>
+        
+        <div class="operation-card" onclick="app.marcarNumero('*2266')" style="margin-bottom:4px;">
+            <div class="operation-info"><div class="operation-name">☎️ Atención Cubacel</div><div class="operation-desc">Atención telefónica de Cubacel</div></div>
+            <span class="operation-phone">📞</span>
+        </div>
+        
+        <div class="operation-card" onclick="app.marcarNumero('*123')" style="margin-bottom:4px;">
+            <div class="operation-info"><div class="operation-name">📨 Buzón de Voz</div><div class="operation-desc">Acceder al buzón de voz</div></div>
+            <span class="operation-phone">📞</span>
+        </div>
+        
+        <div class="operation-card" onclick="app.marcarNumero('*80')" style="margin-bottom:4px;">
+            <div class="operation-info"><div class="operation-name">📨 Buzón de Voz (*80)</div><div class="operation-desc">Acceder al buzón de voz</div></div>
+            <span class="operation-phone">📞</span>
+        </div>
+        
+        <div class="operation-card" onclick="app.marcarNumero('36801')" style="margin-bottom:4px;">
+            <div class="operation-info"><div class="operation-name">📶 Código de Red</div><div class="operation-desc">Código de red Cubacel Cuba</div></div>
+            <span class="operation-phone">📞</span>
+        </div>
+    </div>
+</div>

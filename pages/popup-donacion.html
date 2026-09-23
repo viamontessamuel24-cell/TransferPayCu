@@ -1,0 +1,14 @@
+<!-- pages/popup-donacion.html -->
+<div class="popup-overlay" id="popupDonacion">
+    <div class="popup-box">
+        <button class="popup-close" onclick="app.cerrarPopupDonacion()">✕</button>
+        <div class="popup-emoji">🙏</div>
+        <div class="popup-titulo">¡Apoya este proyecto!</div>
+        <div class="popup-texto">
+            Si TransferPay te es útil, te agradecería que me ayudaras con una donación.<br>
+            ¡Gracias por disfrutar la app! Dios te bendiga. 🙌
+        </div>
+        <button class="popup-btn" onclick="app.cerrarPopupDonacion();app.abrirDonacionSeleccionBanco()">❤️ Donar aquí</button>
+        <button class="popup-btn secondary" onclick="app.cerrarPopupDonacion()">Cerrar</button>
+    </div>
+</div>

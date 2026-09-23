@@ -1,0 +1,64 @@
+<!-- pages/home.html -->
+<div class="home-screen">
+    <div class="home-title">Selecciona tu banco</div>
+    <div class="home-subtitle">Elige la tarjeta para realizar tus operaciones</div>
+    
+    <!-- ===== BANCOS ===== -->
+    <div class="card-option" onclick="app.navigateTo('bpa')">
+        <img src="assets/images/banner-bpa.png" alt="BPA" onerror="this.style.display='none'">
+        <div class="card-info">
+            <div class="card-name">Banco Popular de Ahorro</div>
+            <div class="card-desc">BPA • Código: 01</div>
+        </div>
+        <span class="card-arrow">→</span>
+    </div>
+    
+    <div class="card-option" onclick="app.navigateTo('bandec')">
+        <img src="assets/images/bandec-barra.png" alt="BANDEC" onerror="this.style.display='none'">
+        <div class="card-info">
+            <div class="card-name">Banco de Crédito y Comercio</div>
+            <div class="card-desc">BANDEC • Código: 02</div>
+        </div>
+        <span class="card-arrow">→</span>
+    </div>
+    
+    <div class="card-option" onclick="app.navigateTo('banmet')">
+        <img src="assets/images/banmet-barra.png" alt="BANMET" onerror="this.style.display='none'">
+        <div class="card-info">
+            <div class="card-name">Banco Metropolitano</div>
+            <div class="card-desc">BANMET • Código: 03</div>
+        </div>
+        <span class="card-arrow">→</span>
+    </div>
+    
+    <!-- ===== SEPARADOR: OTRAS OPERACIONES ===== -->
+    <div style="display:flex;align-items:center;gap:12px;margin:20px 0 12px 0;">
+        <div style="flex:1;height:1px;background:linear-gradient(to right, transparent, #d0e8dd, transparent);"></div>
+        <span style="font-size:11px;color:#8aa89a;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;white-space:nowrap;">Otras operaciones</span>
+        <div style="flex:1;height:1px;background:linear-gradient(to left, transparent, #d0e8dd, transparent);"></div>
+    </div>
+    
+    <!-- ===== MY IPHONE ===== -->
+    <div class="card-option" onclick="app.navigateTo('myiphone')" style="border-color:#00a859;background:#f8fffb;">
+        <img src="assets/images/mimovil-baner.png" alt="My iPhone" onerror="this.style.display='none'">
+        <div class="card-info">
+            <div class="card-name">📱 My iPhone <span class="badge-nuevo">NUEVO</span></div>
+            <div class="card-desc">Códigos Cubacel • Saldo, paquetes, recargas y más</div>
+        </div>
+        <span class="card-arrow">→</span>
+    </div>
+    
+    <!-- ===== ENZONA ===== -->
+    <div class="card-option" onclick="app.abrirEnzona()" style="border-left:4px solid #0099cc;">
+        <img src="assets/images/enzona-banner.png" alt="Enzona" onerror="this.style.display='none'">
+        <div class="card-info">
+            <div class="card-name">💳 Enzona</div>
+            <div class="card-desc">Pagos y transferencias electrónicas</div>
+        </div>
+        <span class="card-arrow">→</span>
+    </div>
+    
+    <div class="dev-section">
+        <button class="dev-btn" onclick="app.abrirPanelDev()">🔧 En desarrollo</button>
+    </div>
+</div>
