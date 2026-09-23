@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="color-scheme" content="light dark">
+    <title>TransferPay</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="TransferPay">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="assets/iicons/icono-app.png">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Google Identity Services -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+    <!-- HEADER FIJO -->
+    <header id="mainHeader">
+        <div class="header-left">
+            <img src="assets/icons/icono-app.png" alt="TransferPay" class="header-icon" onerror="this.style.display='none'">
+            <span class="header-title" id="headerTitle">TransferPay</span>
+        </div>
+        <div class="header-right">
+            <span id="headerCredit" class="header-credit" onclick="app.navigateTo('credit')">💎 0</span>
+            <span id="headerUser" class="header-user" onclick="app.navigateTo('credit')">👤</span>
+        </div>
+    </header>
+    
+    <!-- BARRA DE SESIÓN -->
+    <div class="session-wrapper">
+        <div class="session-bar" id="sessionBar" onclick="app.toggleSesion()">
+            <div class="session-status">
+                <span class="status-dot inactive" id="statusDot"></span>
+                <span class="status-text" id="statusText">Sesión inactiva</span>
+            </div>
+            <button class="btn-disconnect" id="btnDisconnect" style="display:none;" onclick="event.stopPropagation();app.desconectar()">Desconectar</button>
+        </div>
+    </div>
+    
+    <!-- BOTÓN VOLVER -->
+    <button class="back-btn" id="backBtn" onclick="app.volver()" style="display:none;">← Volver</button>
+    
+    <!-- CONTENEDOR PRINCIPAL -->
+    <div id="appContainer"></div>
+    
+    <!-- BOTÓN FLOTANTE -->
+    <div class="fab-container" id="fabContainer">
+        <div class="fab-menu" id="fabMenu">
+            <button class="fab-item" onclick="app.marcarNumero('106')"><span class="icon">👤</span><span class="label">Policía (106)</span></button>
+            <button class="fab-item" onclick="app.marcarNumero('104')"><span class="icon">🚑</span><span class="label">Ambulancia (104)</span></button>
+            <button class="fab-item" onclick="app.marcarNumero('105')"><span class="icon">🔥</span><span class="label">Bomberos (105)</span></button>
+            <button class="fab-item" onclick="app.marcarUssd('*2266#')"><span class="icon">☎️</span><span class="label">Cubacel (*2266)</span></button>
+            <button class="fab-item" onclick="app.marcarUssd('*222#')"><span class="icon">💰</span><span class="label">Saldo (*222#)</span></button>
+        </div>
+        <button class="fab-main" id="fabMain" onclick="app.toggleFab()">🚨</button>
+    </div>
+    
+    <!-- TOAST -->
+    <div class="toast" id="toast"></div>
+    
+    <!-- FOOTER -->
+    <div class="footer">TransferPay v4.3 • 🇨🇺 Cuba</div>
+    
+    <!-- SCRIPTS -->
+<script src="js/app.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/auth-google.js"></script>
+<script src="js/ads.js"></script>
+<script src="js/credit.js"></script>
+<script src="js/bancos/bpa.js"></script>
+<script src="js/bancos/bandec.js"></script>
+<script src="js/bancos/banmet.js"></script>
+<script src="js/myiphone.js"></script>
+<script src="js/zdSMS.js"></script>
+</body>
+</html>
